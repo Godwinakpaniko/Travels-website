@@ -1,0 +1,41 @@
+/*
+MEDIA QUERY MANAGER
+
+WIDTHS: 
+
+
+600px -- Mobile Phone
+900px --- Tablet Potrait
+1200px --- Tablet Landscape 
+1800px ---- Big Desktop
+*/
+
+
+
+// This can work for responsive website mixin
+
+/*
+@mixin respond-phone {
+    @media (max-width: 600px) { @content }; 
+} 
+*/
+//////////////////////////
+
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == tab-land {
+        @media (max-width: 75em) {@content}; //1200px
+    } 
+
+    @if $breakpoint == tab-port {
+        @media (max-width: 56.25em) {@content}; //900 px
+    }
+
+    @if $breakpoint == phone {
+        @media (max-width: 37.5em) {@content}; //600px
+    }
+
+    @if $breakpoint == big-desktop {
+        @media (min-width: 112.5em) {@content}; //1800 px
+    }
+}

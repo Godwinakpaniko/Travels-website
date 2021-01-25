@@ -1,0 +1,63 @@
+.image-pop {
+    position: relative;
+
+
+    &__display {
+        width: 55%;
+        box-shadow: 0 1.5rem 4rem rgba($black, .4);
+        border-radius: 2px;
+        position: absolute;
+        z-index: 12;
+        outline-offset: 2rem;
+
+        @include respond(tab-port) {
+            position: relative;
+            width: 33.333%;
+            float: left;
+            box-shadow: 0 1.5rem 3rem rgba($black, .2);
+        }
+
+        &--1 {
+            top: -2rem;
+            left: 0%;
+
+            @include respond(tab-port) {
+                top: 1rem;
+                transform: scale(1.1);
+            }
+        }
+
+        &--2 {
+            right: 0%;
+            top: 2rem;
+
+            @include respond(tab-port) {
+                top: -1rem;
+                transform: scale(1.4);
+                z-index: 200;
+            }
+        }
+        
+        &--3 {
+            top: 10rem;
+            left: 20%;
+
+            @include respond(tab-port) {
+                top: 1rem;
+                left: 0;
+                transform: scale(1.1);
+            }
+        }
+
+
+        &:hover {
+            z-index: 32;
+            transform: scale(1.1) translateY(-.5rem);
+            outline: 1.5rem solid $main-green;
+        }
+
+    }
+    &:hover &__display:not(:hover) {
+        transform: scale(.9);
+    }
+}
